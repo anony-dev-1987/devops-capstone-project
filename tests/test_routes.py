@@ -140,7 +140,7 @@ class TestAccountService(TestCase):
         accounts = self._create_accounts(num)
 
         selected_account = accounts[0]
-        
+
         resp = self.client.get(f"{BASE_URL}/{selected_account.id}")
         self.assertEqual(resp.status_code, 200)
         data = resp.get_json()
@@ -162,7 +162,7 @@ class TestAccountService(TestCase):
         accounts = self._create_accounts(num)
 
         selected_account = accounts[0]
-        
+
         resp = self.client.get(f"{BASE_URL}/{selected_account.id}")
         self.assertEqual(resp.status_code, 200)
         data = resp.get_json()
@@ -196,7 +196,6 @@ class TestAccountService(TestCase):
         self.assertEqual(data["phone_number"], selected_account.phone_number)
         self.assertEqual(data["date_joined"], str(selected_account.date_joined))
 
-
     def test_update_account_not_found(self):
         """It should not update an Account that does not exist"""
         account = AccountFactory()
@@ -213,7 +212,7 @@ class TestAccountService(TestCase):
         accounts = self._create_accounts(num)
 
         selected_account = accounts[0]
-        
+
         resp = self.client.get(f"{BASE_URL}/{selected_account.id}")
         self.assertEqual(resp.status_code, 200)
 

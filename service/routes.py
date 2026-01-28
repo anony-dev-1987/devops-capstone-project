@@ -60,11 +60,12 @@ def create_accounts():
 # LIST ALL ACCOUNTS
 ######################################################################
 
+
 @app.route("/accounts", methods=["GET"])
 def list_accounts():
     """
     List all Accounts
-    
+
     This endpoint will list all Accounts
     """
     app.logger.info("Request to list all Accounts")
@@ -84,7 +85,7 @@ def list_accounts():
 def get_accounts(account_id):
     """
     Read an Account
-    
+
     This endpoint will read an Account by the account_id provided in the URL
     """
     app.logger.info("Request to read an Account with id: %s", account_id)
@@ -101,10 +102,10 @@ def get_accounts(account_id):
     )
 
 
-
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
+
 
 @app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_account(account_id):
